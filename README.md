@@ -46,6 +46,30 @@ Supervisor Agent
 
 The Supervisor Agent analyzes student queries and dynamically delegates tasks to specialized agents. Responses are synthesized into a unified career guidance report.
 
+### 📂 Directory Structure
+
+.
+├── app/
+│   ├── agents/
+│   │   ├── career.py
+│   │   ├── internship.py
+│   │   ├── roadmap.py
+│   │   └── supervisor.py
+│   ├── prompts/
+│   │   └── personas.py
+│   └── tools/
+│       ├── mcp_client.py
+│       └── security.py
+├── tests/
+│   ├── test_mcp_server.py
+│   ├── test_prompts.py
+│   └── test_tools.py
+├── agent.py
+├── mcp_server.py
+├── pyproject.toml
+├── requirements.txt
+└── uv.lock
+
 
 ---
 
