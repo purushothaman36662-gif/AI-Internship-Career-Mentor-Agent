@@ -101,6 +101,19 @@ The system implements Security-focused input validation and environment safety p
 ---
 
 
+## 💡 Supported Career Guidance Scenarios
+
+- AI/ML Internship Preparation
+- Cybersecurity Internship Guidance
+- Cloud & DevOps Career Planning
+- Database Internship Preparation
+- Certification Gap Analysis
+- Personalized Learning Roadmaps
+- Resume Positioning Advice
+- Internship Role Recommendations
+
+
+---
 
 ## 🚀 Running the System
 
