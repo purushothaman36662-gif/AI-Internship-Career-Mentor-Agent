@@ -6,6 +6,28 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 
 ---
 
+## 🎯 The Problem
+
+Navigating career options, technical certifications, and job applications in modern software engineering is an overwhelming challenge for students:
+* **Overwhelming Skill Gaps:** Fields like AI/ML, Cybersecurity, Database Administration, and Cloud/DevOps have vast, complex, and rapidly changing tech stacks. Students often struggle to pinpoint exactly which skills are missing from their current profiles.
+* **Information Overload and Noise:** The internet is saturated with generic, rigid, or outdated roadmaps that fail to adapt to a student's existing skills, courses, or certifications.
+* **Lack of Career Alignment:** Students have difficulty mapping their academic background and project history to the specific profiles that hiring managers actually look for in internship roles.
+
+---
+
+
+## 💡 The Solution
+
+The **AI Internship & Career Mentor** solves these challenges by providing a dynamic, personalized mentoring experience powered by a cooperative network of LLM agents:
+* **Personalized Assessment:** Instead of generic pathways, it reviews the student's background and filters out certifications and skills they already possess.
+* **Specialized Agent Collaboration:** A coordinator and supervisor dynamically route student queries to dedicated sub-agents specialized in Career Analytics, Internship Profile Matching, and strategic Learning Roadmaps.
+* **Factual Grounding (MCP):** To avoid LLM hallucinations regarding certification tracks and role requirements, the system programmatically queries a local standards-compliant Model Context Protocol (MCP) server containing curated domains, certifications, and internship roles.
+* **Security & Safety Guards:** The system incorporates length and injection validations to prevent adversarial inputs from compromising the agent personas.
+
+
+---
+
+
 ## 📸 Demo Screenshots
 
 ### Multi-Agent Execution Flow
@@ -26,7 +48,6 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 <img width="320" height="180" alt="05_security_filter_execution_trace png" src="https://github.com/user-attachments/assets/4cedac69-898e-42b1-b720-ba968b343891" />
 
 
-
 ---
 
 
@@ -40,7 +61,6 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 - FastMCP
 - dotenv
 - unittest
-
 
 ---
 
@@ -76,7 +96,6 @@ The Supervisor Agent analyzes student queries and dynamically delegates tasks to
 ├── pyproject.toml
 ├── requirements.txt
 └── uv.lock
-
 
 ---
 
@@ -143,8 +162,31 @@ The system implements Security-focused input validation and environment safety p
 - Resume Positioning Advice
 - Internship Role Recommendations
 
+---
+
+
+## 🛠️ Project Journey
+
+### Phase 1: Concept & Scaffolding
+We set out to create a tool to solve career navigation confusion. The initial design was a single-agent chat system. However, we realized that career analysis, recruiter profile matching, and educational roadmap drafting are distinct cognitive tasks requiring different personas and instructions. 
+
+### Phase 2: Hierarchical Multi-Agent Design
+We separated the system into three specialized sub-agents (Career, Internship, and Roadmap) and a central supervisor/coordinator to handle routing. We built this orchestration using the **Google Agent Development Kit (ADK)** framework. We defined clear instructions for each subagent in [personas.py](file:///c:/Users/PURUSHOTHAMAN/OneDrive/المستندات/Kaggle_Capstone_2026/Agent/AI_Internship_Career_Mentor/app/prompts/personas.py).
+
+### Phase 3: Factual Grounding with MCP
+A major challenge during early testing was model hallucination—specifically, the models proposing certification tracks the user already had, or matching backgrounds to irrelevant roles. To solve this, we decoupled factual lookups from LLM reasoning:
+* We built an **MCP Tool Server** utilizing Python `mcp` (`FastMCP`) and mounted it on **FastAPI** to provide structured lookup tables.
+* The Career subagent calls the `get_skill_recommendations` tool, which automatically subtracts the student's `current_skills` from the recommended list, ensuring the model never suggests redundant certifications.
+
+### Phase 4: Proactive Security Enforcement
+As a public-facing educational tool, the agent is susceptible to prompt injection attacks (e.g., users asking the chatbot to "reveal your system prompt"). We implemented custom middleware in [security.py](file:///c:/Users/PURUSHOTHAMAN/OneDrive/المستندات/Kaggle_Capstone_2026/Agent/AI_Internship_Career_Mentor/app/tools/security.py) that acts as a secure input gate, sanitizing student requests before they reach the coordinator or subagents.
+
+### Phase 5: Test-Driven Development & Validation
+To ensure robustness, we implemented unit test suites for prompt validation, tool handlers, and the MCP server under the `tests/` directory. Running `python -m unittest discover -s tests` confirms that the safety boundaries and tool operations perform reliably under boundary conditions.
+
 
 ---
+
 
 ## 🚀 Running the System
 
