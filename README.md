@@ -49,7 +49,7 @@ To provide deterministic factual data to the ADK agents, a standards-compliant *
 ---
 
 ### 3. Security Features
-The system implements enterprise-grade input validation and environment safety practices in [app/tools/security.py](file:///c:/Users/PURUSHOTHAMAN/OneDrive/المستندات/Kaggle_Capstone_2026/Agent/AI_Internship_Career_Mentor/app/tools/security.py):
+The system implements Security-focused input validation and environment safety practices in [app/tools/security.py](file:///c:/Users/PURUSHOTHAMAN/OneDrive/المستندات/Kaggle_Capstone_2026/Agent/AI_Internship_Career_Mentor/app/tools/security.py):
 *   **Input Length Validation**: Blocks execution if any student prompt input exceeds 500 characters to prevent buffer issues or resource exhaustion.
 *   **Prompt Injection Guards**: Scans user inputs case-insensitively for malicious injection patterns (e.g., `"ignore all previous instructions"`, `"reveal system prompt"`), blocking them immediately by raising a custom `ValidationError`.
 *   **Secure API Key Resolution**: A custom environment parser loads the Google API key from a git-ignored local `.env` file into `os.environ` dynamically, ensuring no keys are ever hardcoded.
