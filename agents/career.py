@@ -6,7 +6,7 @@ from app.tools.mcp_client import get_career_paths, get_skill_recommendations
 career_agent = Agent(
     name="career_agent",
     description="Use this tool to perform a career skill gap analysis and find recommended certification tracks based on student interests and target roles.",
-    model=Gemini(model="gemini-2.5-flash"),
+    model=Gemini(model="gemini-flash-latest"),
     instruction=CAREER_PROMPT,
     tools=[get_career_paths, get_skill_recommendations]
 )

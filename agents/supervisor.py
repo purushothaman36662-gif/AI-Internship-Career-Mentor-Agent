@@ -14,7 +14,7 @@ roadmap_tool = AgentTool(agent=roadmap_agent)
 # Supervisor root agent orchestration
 root_agent = Agent(
     name="supervisor_agent",
-    model=Gemini(model="gemini-2.5-flash"),
+    model=Gemini(model="gemini-flash-latest"),
     instruction=ADK_SUPERVISOR_INSTRUCTION,
     tools=[career_tool, internship_tool, roadmap_tool]
 )
