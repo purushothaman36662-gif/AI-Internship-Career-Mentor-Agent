@@ -6,6 +6,50 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 
 ---
 
+## 📸 Demo Screenshots
+
+### Multi-Agent Execution Flow
+
+<img width="320" height="180" alt="01_adk_playground_success_response png" src="https://github.com/user-attachments/assets/f56db2ed-4880-46c4-9678-ed1c79f4f440" />
+<img width="320" height="180" alt="02_actionable_milestone_roadmap png" src="https://github.com/user-attachments/assets/c76366c2-8c46-493c-a900-b334b3357732" />
+
+
+
+### Generated Career Roadmap
+
+<img width="320" height="180" alt="03_multi_agent_execution_trace png" src="https://github.com/user-attachments/assets/9038d3ff-729a-4500-b39c-dd098e3575bf" />
+
+
+---
+
+
+## 🛠 Tech Stack
+
+- Python
+- Google Agent Development Kit (ADK)
+- Gemini 1.5 Flash / Gemini 2.5 Flash
+- FastAPI
+- MCP (Model Context Protocol)
+- FastMCP
+- dotenv
+- unittest
+
+
+---
+
+## 🏗 Architecture Overview
+
+Supervisor Agent
+├── Career Agent
+├── Internship Agent
+└── Roadmap Agent
+
+The Supervisor Agent analyzes student queries and dynamically delegates tasks to specialized agents. Responses are synthesized into a unified career guidance report.
+
+
+---
+
+
 ## 🗺️ Architectural Concept Mapping
 
 ### 1. Multi-Agent Orchestration (ADK)
@@ -55,6 +99,8 @@ The system implements Security-focused input validation and environment safety p
 *   **Secure API Key Resolution**: A custom environment parser loads the Google API key from a git-ignored local `.env` file into `os.environ` dynamically, ensuring no keys are ever hardcoded.
 
 ---
+
+
 
 ## 🚀 Running the System
 
