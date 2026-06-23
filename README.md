@@ -1,4 +1,4 @@
-# 🎓 AI Internship & Career Mentor - Core Execution Engine
+# 🎓 AI Internship & Career Mentor
 
 An intelligent multi-agent career mentoring system designed to guide students towards target engineering roles in the AI, Machine Learning, Cybersecurity, Cloud/DevOps, and Database domains. 
 
