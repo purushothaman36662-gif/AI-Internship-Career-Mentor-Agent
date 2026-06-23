@@ -20,6 +20,13 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 <img width="320" height="180" alt="03_multi_agent_execution_trace png" src="https://github.com/user-attachments/assets/9038d3ff-729a-4500-b39c-dd098e3575bf" />
 
 
+### 🔒 Security Firewall Deflection
+
+<img width="320" height="180" alt="04_security_filter_injection_defense png" src="https://github.com/user-attachments/assets/9086e339-cf40-4d98-87e0-928e62586610" />
+<img width="320" height="180" alt="05_security_filter_execution_trace png" src="https://github.com/user-attachments/assets/4cedac69-898e-42b1-b720-ba968b343891" />
+
+
+
 ---
 
 
