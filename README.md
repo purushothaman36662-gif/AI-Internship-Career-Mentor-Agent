@@ -6,6 +6,12 @@ The system is built on a production-grade **Google Agent Development Kit (ADK)**
 
 ---
 
+## Demo Video
+
+YouTube: https://youtu.be/Rb7E-Uo43JY
+
+---
+
 ## 🎯 The Problem
 
 Navigating career options, technical certifications, and job applications in modern software engineering is an overwhelming challenge for students:
